@@ -5,14 +5,13 @@ test:test.cpp
 	-./$@
 	-rm ./$@
 
-main:main.o Interduce.o copy_test.o friend_test.o \
-	Package_test.o inherit_test.o
+main:main.o polymorphism_test.o
 	-g++ $^ -o main
 	-./main
 # 	-rm -f *.o main
 
-main.o:main.cpp Interduce.h copy_test.h \
-friend_test.h Package_test.h inherit_test.h
+main.o:main.cpp \
+polymorphism_test.h
 	g++ -c main.cpp
 
 Interduce.o:Interduce.cpp Interduce.h
@@ -30,5 +29,8 @@ Package_test.o:Package_test.cpp Package_test.h
 inherit_test.o:inherit_test.cpp inherit_test.h
 	g++ -c inherit_test.cpp
 
+polymorphism_test:polymorphism_test.cpp\
+polymorphism_test.h
+	g++ -c polymorphism_test.cpp
 clean:
 	-rm -f *.o main

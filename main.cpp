@@ -1,8 +1,9 @@
-#include "Interduce.h"
-#include "copy_test.h"
-#include "friend_test.h"
-#include "Package_test.h"
-#include "inherit_test.h"
+// #include "Interduce.h"
+// #include "copy_test.h"
+// #include "friend_test.h"
+// #include "Package_test.h"
+// #include "inherit_test.h"
+#include "polymorphism_test.h"
 
 int main(int argc, char const *argv[])
 {
@@ -42,11 +43,20 @@ int main(int argc, char const *argv[])
 
     // Li.get_inf();
     
-    dog xiaohei = dog("xioahei",'M',4,7890,"BLACK DOG");
+    // dog xiaohei = dog("xioahei",'M',4,7890,"BLACK DOG");
 
-    xiaohei.go_sleep();
+    // xiaohei.go_sleep();
 
-    xiaohei.play_fun();
+    // xiaohei.play_fun();
 
+    Cat cat = Cat("xiaohong",17);
+    Animal& xiaohong = cat;
+    xiaohong.shout();
+    xiaohong.sleep();
+
+    Milk *milk = new Milk("xiaohuang",10);
+    Animal *xiaohuang = milk;
+    milk->shout();
+    milk->sleep(); 
     return 0;
 }
